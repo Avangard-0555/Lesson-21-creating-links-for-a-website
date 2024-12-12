@@ -1,25 +1,8 @@
 from django.urls import path
 from . import views
-#from . project1.urls import urlpatterns
 
 urlpatterns = [
-    path('', views.home_page),
-    path('about', views.about_page),
-    path('contacts', views.contacts_page)
-
+    path('news/', views.news_list, name='news_list'),  # Список новостей
+    path('news/add-to-favorites/<int:news_id>/', views.add_to_favorites, name='add_to_favorites'),  # Добавить в избранное
+    path('favorites/', views.favorite_news, name='favorite_news'),  # Избранное
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
